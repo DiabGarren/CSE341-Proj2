@@ -9,4 +9,6 @@ routes.post('/', myController.createVehicle);
 
 routes.put('/:id', myController.updateVehicle);
 
+routes.delete('/:id', myController.deleteVehicle);
+
 module.exports = routes;

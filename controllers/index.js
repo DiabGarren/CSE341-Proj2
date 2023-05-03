@@ -76,4 +76,17 @@ const updateVehicle = async (req, res) => {
     }
 };
 
-module.exports = { getVehicles, getVehicle, createVehicle, updateVehicle };
+const deleteVehicle = async (req, res) => {
+    /*
+        #swagger.tags = ['Vehicles']
+        #swagger.description = 'Delete a vehicle by ID'
+    */
+    const id = new objectId(req.params.id);
+    const response = await mongodb.getDb().db().collection('vehicles').deleteOne({ _id: id });
+    if (response.deletedCount > 0) {
+        res.status(200).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occurred while deleting the vehicle.');
+    }
+};
+module.exports = { getVehicles, getVehicle, createVehicle, updateVehicle, deleteVehicle };
