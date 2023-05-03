@@ -1,0 +1,11 @@
+[
+    {
+        "make": "Jeep",
+        "model": "Wrangler",
+        "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. It is great for everyday driving as well as off-roading whether that be on the rocks or in the mud!",
+        "price": "28045",
+        "classificationId": "4",
+        "large": "",
+        "small": ""
+    }
+]

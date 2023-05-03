@@ -5,11 +5,11 @@ POST HTTP://localhost:8080/vehicles HTTP/1.1
 Content-Type: application/json
 
 {
-    "make": "Jeep",
-    "model": "Wrangler",
-    "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. It is great for everyday driving as well as off-roading whether that be on the rocks or in the mud!",
-    "price": "28045",
-    "classification": "SUV",
+    "make": "Cadillac",
+    "model": "Escalade",
+    "description": "This styling car is great for any occasion from going to the beach to meeting the president. The luxurious inside makes this car a home away from home.",
+    "price": "75195",
+    "classificationId": "4",
     "large": "",
     "small": ""
 }
@@ -24,9 +24,9 @@ Content-Type: application/json
 {
     "make": "Jeep",
     "model": "Wrangler",
-    "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. It is great for everyday driving as well as off-roading whether that be on the rocks or in the mud!",
-    "price": "28045",
-    "classification": "SUV",
+    "description": "",
+    "price": "0",
+    "classificationId": "4",
     "large": "",
     "small": ""
 }
@@ -45,11 +45,11 @@ POST HTTPS://cse341-proj2.onrender.com/vehicles HTTP/1.1
 Content-Type: application/json
 
 {
-    "make": "Jeep",
-    "model": "Wrangler",
-    "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. It is great for everyday driving as well as off-roading whether that be on the rocks or in the mud!",
-    "price": "28045",
-    "classification": "SUV",
+    "make": "Cadillac",
+    "model": "Escalade",
+    "description": "This styling car is great for any occasion from going to the beach to meeting the president. The luxurious inside makes this car a home away from home.",
+    "price": "75195",
+    "classificationId": "4",
     "large": "",
     "small": ""
 }
@@ -61,9 +61,9 @@ Content-Type: application/json
 {
     "make": "Jeep",
     "model": "Wrangler",
-    "description": "The Jeep Wrangler is small and compact with enough power to get you where you want to go. It is great for everyday driving as well as off-roading whether that be on the rocks or in the mud!",
-    "price": "28045",
-    "classification": "SUV",
+    "description": "",
+    "price": "0",
+    "classificationId": "4",
     "large": "",
     "small": ""
 }

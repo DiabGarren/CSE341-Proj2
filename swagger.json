@@ -52,7 +52,7 @@
                 "price": {
                   "example": "any"
                 },
-                "classification": {
+                "classificationId": {
                   "example": "any"
                 },
                 "large": {
@@ -128,7 +128,7 @@
                 "price": {
                   "example": "any"
                 },
-                "classification": {
+                "classificationId": {
                   "example": "any"
                 },
                 "large": {
