@@ -7,6 +7,7 @@ const doc = {
         description: 'Vehicles API',
     },
     host: 'cse341-proj2.onrender.com',
+    // host: 'localhost:8080',
     schemes: ['https', 'http'],
 };
 
