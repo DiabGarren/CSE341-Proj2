@@ -78,3 +78,65 @@ Content-Type: application/json
 
 ###
 DELETE HTTPS://cse341-proj2.onrender.com/vehicles/6452b8154b838bfdaf929879 HTTP/1.1
+
+###
+GET HTTP://localhost:8080/users HTTP/1.1
+
+###
+POST HTTP://localhost:8080/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+GET HTTP://localhost:8080/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+
+###
+PUT HTTP://localhost:8080/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+DELETE HTTP://localhost:8080/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+
+###
+GET HTTPS://cse341-proj2.onrender.com/users HTTP/1.1
+
+###
+GET HTTPS://cse341-proj2.onrender.com/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+
+###
+POST HTTPS://cse341-proj2.onrender.com/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+PUT HTTPS://cse341-proj2.onrender.com/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+DELETE HTTPS://cse341-proj2.onrender.com/users/645c03a45f0bb9cd0436c624 HTTP/1.1
