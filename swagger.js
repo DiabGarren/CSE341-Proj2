@@ -7,8 +7,9 @@ const doc = {
         description: 'Vehicles API',
     },
     host: 'cse341-proj2.onrender.com',
+    schemes: ['https'],
     // host: 'localhost:8080',
-    schemes: ['https', 'http'],
+    // schemes: ['http'],
 };
 
 const outputFile = './swagger.json';
