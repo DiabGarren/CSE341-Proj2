@@ -53,7 +53,7 @@ const getUser = async (req, res) => {
 const createUser = async (req, res) => {
     /*
         #swagger.tags = ['Users']
-        #swagger.description = 'Add a NEW user'
+        #swagger.description = 'Add a NEW user. The password must be: minimum 8 characters, contain at least 1 upper case, 1 lower case and 1 number.'
     */
     try {
         const vehicle = {
@@ -76,7 +76,7 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
     /*
         #swagger.tags = ['Users']
-        #swagger.description = 'Update a user by ID'
+        #swagger.description = 'Update a user by ID. The new password cannot be same as the old password and must be: minimum 8 characters, contain at least 1 upper case, 1 lower case and 1 number.'
     */
     try {
         if (!objectId.isValid(req.params.id)) {
