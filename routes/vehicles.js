@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const routes = require('express').Router();
-const myController = require('../controllers');
+const myController = require('../controllers/vehicles');
 const validation = require('../middleware/validate');
 
 routes.get('/', myController.getVehicles);
