@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const mongodb = require('../db');
 const objectId = require('mongodb').ObjectId;
+const bcrypt = require('bcrypt');
 
 const getUsers = async (req, res) => {
     /*
@@ -58,11 +59,11 @@ const createUser = async (req, res) => {
         const vehicle = {
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: await hashPassword(req.body.password),
             image: req.body.image
         };
         const response = await mongodb.getDb().db().collection('users').insertOne(vehicle);
-        if (response.acknowledged) {
+        if (response.acknowledged || password != null) {
             res.status(201).json(response);
         } else {
             res.status(500).json(response.error || 'Some error occurred while creating the user.');
@@ -85,15 +86,27 @@ const updateUser = async (req, res) => {
         const vehicle = {
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: await hashPassword(req.body.password),
             image: req.body.image
         };
-        const response = await mongodb.getDb().db().collection('users').replaceOne({ _id: id }, vehicle);
-        if (response.acknowledged) {
-            res.status(204).send();
+
+        const result = await mongodb.getDb().db().collection('users').find({ _id: id });
+        const hash = await result.toArray();
+
+        const samePass = await comparePassword(req.body.password, hash[0].password);
+        console.log(samePass);
+
+        if (samePass == true) {
+            res.status(400).json('The new password cannot be the same as the old password.');
         } else {
-            res.status(500).json(response.error || 'Some error occurred while updating the user.');
+            const response = await mongodb.getDb().db().collection('users').replaceOne({ _id: id }, vehicle);
+            if (response.acknowledged) {
+                res.status(204).send();
+            } else {
+                res.status(500).json(response.error || 'Some error occurred while updating the user.');
+            }
         }
+        
     } catch (err) {
         res.status(500).json(err);
     }
@@ -118,5 +131,15 @@ const deleteUser = async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+};
+
+const hashPassword = async (password) => {
+    const hash = await bcrypt.hash(password, 10);
+    return hash;
+};
+
+const comparePassword = async (password, hash) => {
+    const result = await bcrypt.compare(password, hash);
+    return result;
 };
 module.exports = { getUsers, getUser, createUser, updateUser, deleteUser };
