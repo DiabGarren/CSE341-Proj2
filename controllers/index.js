@@ -59,7 +59,7 @@ const createVehicle = async (req, res) => {
             model: req.body.model,
             description: req.body.description,
             price: req.body.price,
-            classificationId: req.body.classificationId,
+            classification: req.body.classification,
             images: {
                 large: req.body.large,
                 small: req.body.small
@@ -91,7 +91,7 @@ const updateVehicle = async (req, res) => {
             model: req.body.model,
             description: req.body.description,
             price: req.body.price,
-            classificationId: req.body.classificationId,
+            classification: req.body.classification,
             images: {
                 large: req.body.large,
                 small: req.body.small
