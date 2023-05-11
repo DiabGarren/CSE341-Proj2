@@ -198,7 +198,7 @@
         "tags": [
           "Users"
         ],
-        "description": "Get ALL users",
+        "description": "Get ALL users   All passwords are hashed.",
         "produces": [
           "application/json"
         ],
@@ -216,7 +216,7 @@
         "tags": [
           "Users"
         ],
-        "description": "Add a NEW user. The password must be: minimum 8 characters, contain at least 1 upper case, 1 lower case and 1 number.",
+        "description": "Add a NEW user.    The password must be: minimum 8 characters, contain at least 1 upper case, 1 lower case and 1 number.    All passwords are hashed.",
         "parameters": [
           {
             "name": "body",
@@ -258,7 +258,7 @@
         "tags": [
           "Users"
         ],
-        "description": "Get user by ID",
+        "description": "Get user by ID.    All passwords are hashed.",
         "produces": [
           "application/json"
         ],
@@ -286,7 +286,7 @@
         "tags": [
           "Users"
         ],
-        "description": "Update a user by ID. The new password cannot be same as the old password and must be: minimum 8 characters, contain at least 1 upper case, 1 lower case and 1 number.",
+        "description": "Update a user by ID.    The new password cannot be same as the old password and must be: minimum 8 characters, contain at least 1 upper case, 1 lower case and 1 number.    All passwords are hashed.",
         "parameters": [
           {
             "name": "id",
@@ -335,7 +335,7 @@
         "tags": [
           "Users"
         ],
-        "description": "Delete a user by ID",
+        "description": "Delete a user by ID.    All passwords are hashed.",
         "parameters": [
           {
             "name": "id",
