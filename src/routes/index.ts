@@ -1,10 +1,8 @@
 "use strict";
 
-import express = require('express');
-const routes = express.Router();
+const routes = require('express').Router();
 
-routes.use('/vehicles', require('./vehicles'));
 routes.use('/users', require('./users'));
-routes.use('/', require('./swagger'));
+routes.use('/vehicles', require('./vehicles'));
 
 export = routes;

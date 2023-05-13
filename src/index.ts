@@ -2,7 +2,7 @@
 
 import express = require('express');
 import bodyParser = require('body-parser');
-import mongodb = require('./db');
+import mongoose = require('./db');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -18,11 +18,7 @@ app
     })
     .use('/', require('./routes'));
 
-mongodb.initDb((err: Error | any) => {
-    if (err) {
-        console.log(err);
-    } else {
-        app.listen(port);
-        console.log(`Connected to DB and listening on ${port}`);
-    }
-});
+if (mongoose.initDb()) {
+    app.listen(port);
+    console.log(`Listening on port ${port}`);
+}
