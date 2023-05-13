@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
     "build": "npx tsc",
-    "swagger": "node dist/swagger.js"
+    "swagger": "node src/swagger.ts"
   },
   "repository": {
     "type": "git",

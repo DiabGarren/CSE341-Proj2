@@ -1,10 +1,8 @@
 "use strict";
 
-import myController = require('../controllers/users');
-import validation = require('../middleware/validate');
-
-import express = require('express');
-const routes = express.Router();
+const routes = require('express').Router();
+const myController = require('../controllers/users');
+const validation = require('../middleware/validate');
 
 routes.get('/', myController.getUsers);
 routes.get('/:id', myController.getUser);
