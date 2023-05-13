@@ -25,13 +25,13 @@ const userQuery = new GraphQLObjectType({
         getUser: {
             type: userType,
             args: { id: { type: GraphQLID } },
-            resolve(parent, args) {
+            resolve(_parent: any, args: any) {
                 return user.findById(args.id);
             }
         },
         getAllUsers: {
             type: new GraphQLList(userType),
-            resolve(parent, args) {
+            resolve(_parent: any, _args: any) {
                 return user.find({});
             }
         }

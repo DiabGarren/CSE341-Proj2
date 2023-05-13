@@ -37,13 +37,13 @@ const vehicleQuery = new GraphQLObjectType({
         getVehicle: {
             type: vehicleType,
             args: { id: { type: GraphQLID } },
-            resolve(parent, args) {
+            resolve(_parent: any, args: any) {
                 return vehicle.findById(args.id);
             }
         },
         getAllVehicles: {
             type: new GraphQLList(vehicleType),
-            resolve(parent, args) {
+            resolve(_parent: any, _args: any) {
                 return vehicle.find({});
             }
         }
