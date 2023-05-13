@@ -1,7 +1,6 @@
 "use strict";
 
-import swaggerAuto = require('swagger-autogen');
-const swaggerAutogen = swaggerAuto();
+import swaggerAutogen = require('swagger-autogen');
 
 const doc = {
     info: {
@@ -14,11 +13,11 @@ const doc = {
     // schemes: ['http'],
 };
 
-const outputFile = 'dist/swagger.json';
+const outputFile = './swagger.json';
 const endpointsFiles = ['dist/routes/index.js'];
 
 // generate swagger.json
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen()(outputFile, endpointsFiles, doc);
 
 // Run server after it gets generated
 // swaggerAutogen(outputFile, endpointsFiles, doc).then(async () => {

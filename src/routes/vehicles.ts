@@ -1,4 +1,5 @@
-/* eslint-disable no-undef */
+"use strict";
+
 const routes = require('express').Router();
 const myController = require('../controllers/vehicles');
 const validation = require('../middleware/validate');
