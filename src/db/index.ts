@@ -1,11 +1,13 @@
-/* eslint-disable no-undef */
-const dotenv = require('dotenv');
+"use strict";
+
+import dotenv = require('dotenv');
 dotenv.config();
-const MongoClient = require('mongodb').MongoClient;
+import mongodb = require('mongodb');
+const MongoClient = mongodb.MongoClient;
 
-let _db;
+let _db: mongodb.MongoClient;
 
-const initDb = (callback) => {
+const initDb = (callback: Function) => {
     if (_db) {
         console.log('Db is already initialized!');
         return callback(null, _db);
@@ -27,4 +29,4 @@ const getDb = () => {
     return _db;
 };
 
-module.exports = { initDb, getDb, };
+export = { initDb, getDb, };

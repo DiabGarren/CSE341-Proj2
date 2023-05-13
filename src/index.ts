@@ -1,16 +1,16 @@
-/* eslint-disable no-undef */
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongodb = require('./db');
+"use strict";
+
+import express = require('express');
+import bodyParser = require('body-parser');
+import mongodb = require('./db');
 
 const app = express();
 const port = process.env.PORT || 8080;
 
 
 app
-    // .use(cors())
     .use(bodyParser.json())
-    .use((req, res, next) => {
+    .use((_req: Request | any, res: Response | any, next: Function) => {
         res.header('Access-Control-Allow-Origin', '*');
         res.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT,DELETE');
         res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -18,7 +18,7 @@ app
     })
     .use('/', require('./routes'));
 
-mongodb.initDb((err) => {
+mongodb.initDb((err: Error | any) => {
     if (err) {
         console.log(err);
     } else {

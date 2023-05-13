@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
-const validator = require('../helpers/validate');
-
+"use strict";
+const validator = require("../helpers/validate");
 const saveVehicle = (req, res, next) => {
     const validationRule = {
         make: 'required|string',
@@ -20,12 +19,12 @@ const saveVehicle = (req, res, next) => {
                 message: 'Validation failed',
                 data: err
             });
-        } else {
+        }
+        else {
             next();
         }
     });
 };
-
 const saveUser = (req, res, next) => {
     const validationRule = {
         username: 'required|string',
@@ -43,10 +42,10 @@ const saveUser = (req, res, next) => {
                 message: 'Validation failed',
                 data: err
             });
-        } else {
+        }
+        else {
             next();
         }
     });
 };
-
 module.exports = { saveVehicle, saveUser };
