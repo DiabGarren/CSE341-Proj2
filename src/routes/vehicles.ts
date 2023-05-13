@@ -13,4 +13,4 @@ routes.put('/:id', validation.saveVehicle, myController.updateVehicle);
 
 routes.delete('/:id', myController.deleteVehicle);
 
-module.exports = routes;
+export = routes;
