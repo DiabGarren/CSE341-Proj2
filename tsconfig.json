@@ -15,5 +15,5 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true
     },
-    "include": ["./src/**/*"]
+    "include": ["./src/**/*", "graphql/graphql.ts"]
 }

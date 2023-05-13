@@ -1,4 +1,5 @@
-/* eslint-disable no-undef */
+"use strict";
+
 import db = require('../db');
 
 import mongodb = require('mongodb');
