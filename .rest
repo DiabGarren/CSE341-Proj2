@@ -1,0 +1,142 @@
+GET HTTP://localhost:8080/vehicles HTTP/1.1
+
+###
+POST HTTP://localhost:8080/vehicles HTTP/1.1
+Content-Type: application/json
+
+{
+    "make": "Cadillac",
+    "model": "Escalade",
+    "description": "This styling car is great for any occasion from going to the beach to meeting the president. The luxurious inside makes this car a home away from home.",
+    "price": "75195",
+    "classification": "SUV",
+    "images": {
+        "large": "",
+        "small": ""
+    }
+}
+
+###
+GET HTTP://localhost:8080/vehicles/645b7a79b3828a1711d8edbc HTTP/1.1
+
+###
+PUT HTTP://localhost:8080/vehicles/6452b8154b838bfdaf929879 HTTP/1.1
+Content-Type: application/json
+
+{
+    "make": "Jeep",
+    "model": "Wrangler",
+    "description": "",
+    "price": "0",
+    "classification": "SUV",
+    "images": {
+        "large": "",
+        "small": ""
+    }
+}
+
+###
+DELETE HTTP://localhost:8080/vehicles/6452cf568a47460c94476a4d HTTP/1.1
+
+###
+GET HTTPS://cse341-proj2.onrender.com/vehicles HTTP/1.1
+
+###
+GET HTTPS://cse341-proj2.onrender.com/vehicles/6452b8154b838bfdaf929879 HTTP/1.1
+
+###
+POST HTTPS://cse341-proj2.onrender.com/vehicles HTTP/1.1
+Content-Type: application/json
+
+{
+    "make": "Cadillac",
+    "model": "Escalade",
+    "description": "This styling car is great for any occasion from going to the beach to meeting the president. The luxurious inside makes this car a home away from home.",
+    "price": "75195",
+    "classification": "SUV",
+    "images": {
+        "large": "",
+        "small": ""
+    }
+}
+
+###
+PUT HTTPS://cse341-proj2.onrender.com/vehicles/6452b8154b838bfdaf929879 HTTP/1.1
+Content-Type: application/json
+
+{
+    "make": "Jeep",
+    "model": "Wrangler",
+    "description": "",
+    "price": "0",
+    "classification": "SUV",
+    "images": {
+        "large": "",
+        "small": ""
+    }
+}
+
+###
+DELETE HTTPS://cse341-proj2.onrender.com/vehicles/6452b8154b838bfdaf929879 HTTP/1.1
+
+###
+GET HTTP://localhost:8080/users HTTP/1.1
+
+###
+POST HTTP://localhost:8080/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+GET HTTP://localhost:8080/users/645c546524ef165a9cbb6758 HTTP/1.1
+
+###
+PUT HTTP://localhost:8080/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+DELETE HTTP://localhost:8080/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+
+###
+GET HTTPS://cse341-proj2.onrender.com/users HTTP/1.1
+
+###
+GET HTTPS://cse341-proj2.onrender.com/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+
+###
+POST HTTPS://cse341-proj2.onrender.com/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+PUT HTTPS://cse341-proj2.onrender.com/users/645c03a45f0bb9cd0436c624 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "diabgarren",
+    "email": "garrendiab@gmail.com",
+    "password": "Garrendiab1",
+    "image": "any"
+}
+
+###
+DELETE HTTPS://cse341-proj2.onrender.com/users/645c03a45f0bb9cd0436c624 HTTP/1.1
