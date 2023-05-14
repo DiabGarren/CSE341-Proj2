@@ -1,16 +1,11 @@
 "use strict";
 
 const routes = require('express').Router();
-const myController = require('../controllers/vehicles');
-const validation = require('../middleware/validate');
 
-routes.get('/', myController.getVehicles);
-routes.get('/:id', myController.getVehicle);
+import { graphqlHTTP } from 'express-graphql';
+import schema = require('../controllers/vehicles');
 
-routes.post('/', validation.saveVehicle, myController.createVehicle);
 
-routes.put('/:id', validation.saveVehicle, myController.updateVehicle);
-
-routes.delete('/:id', myController.deleteVehicle);
+routes.use('/', graphqlHTTP({ schema, graphiql: true }));
 
 export = routes;

@@ -1,32 +1,16 @@
 "use strict";
 
-import dotenv = require('dotenv');
+import dotenv from 'dotenv';
 dotenv.config();
-import mongodb = require('mongodb');
-const MongoClient = mongodb.MongoClient;
+import mongoose from 'mongoose';
 
-let _db: mongodb.MongoClient;
+const initDb = () => {
+    mongoose.connect(process.env.MONGODB_URI);
 
-const initDb = (callback: Function) => {
-    if (_db) {
-        console.log('Db is already initialized!');
-        return callback(null, _db);
-    }
-    MongoClient.connect(process.env.MONGODB_URI)
-        .then((client) => {
-            _db = client;
-            callback(null, _db);
-        })
-        .catch((err) => {
-            callback(err);
-        });
+    mongoose.connection.once('open', () => {
+        console.log('Connect to db');
+    });
+    return true;
 };
 
-const getDb = () => {
-    if (!_db) {
-        throw Error('Db not initialized');
-    }
-    return _db;
-};
-
-export = { initDb, getDb, };
+export = { initDb };
