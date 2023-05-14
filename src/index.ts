@@ -7,7 +7,6 @@ import mongoose = require('./db');
 const app = express();
 const port = process.env.PORT || 8080;
 
-
 app
     .use(bodyParser.json())
     .use((_req: Request | any, res: Response | any, next: Function) => {
